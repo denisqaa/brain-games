@@ -1,24 +1,18 @@
 import playGame from "../game-base.js";
+import {getRandomNumbersFromRange} from "../random-utils.js";
 
-const maxNumber = 100;
-const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const RULE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getRandomNumber = () => {
-    return Math.floor(Math.random() * maxNumber);
+    return getRandomNumbersFromRange();
 };
 
 const getCorrectAnswer = (number) => {
     return number % 2 === 0 ? "yes" : "no";
 };
 
-const isEvenGame = (answer, question) => {
-    return answer === getCorrectAnswer(question);
-};
-
-
-
 export default () => {
-    playGame(isEvenGame, rule, getRandomNumber, getCorrectAnswer)
+    playGame(RULE, getRandomNumber, getCorrectAnswer)
 };
 
 
