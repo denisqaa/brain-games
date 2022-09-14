@@ -1,28 +1,23 @@
-import runGame from "../index.js";
-import {getRandomNumberFromRange} from "../random-utils.js";
+import runGame from '../index.js';
+import getRandomNumberFromRange from '../random-utils.js';
 
 const RULE = 'What is the result of the expression?';
-const AVAILABLE_OPERATORS = ['+', '-', '*']
+const AVAILABLE_OPERATORS = ['+', '-', '*'];
 
 const getExpressionAndAnswer = () => {
-    let expression =` ${getRandomNumberFromRange()} ${AVAILABLE_OPERATORS[getRandomNumberFromRange(2)]} ${getRandomNumberFromRange()}`;
-    let splittedExpression = expression.trim().split(" ");
-    let leftOperand = splittedExpression[0];
-    let rightOperand = splittedExpression[2];
-    let operation = splittedExpression[1];
-    if (operation === '*') {
-        return [expression, String(leftOperand * rightOperand)];
-    } else if (operation === '-') {
-        return [expression, String(leftOperand - rightOperand)];
-    }
-    return [expression, String(~~leftOperand + ~~rightOperand)];
+  const expression = ` ${getRandomNumberFromRange()} ${AVAILABLE_OPERATORS[getRandomNumberFromRange(2)]} ${getRandomNumberFromRange()}`;
+  const splittedExpression = expression.trim().split(' ');
+  const leftOperand = splittedExpression[0];
+  const rightOperand = splittedExpression[2];
+  const operation = splittedExpression[1];
+  if (operation === '*') {
+    return [expression, String(leftOperand * rightOperand)];
+  } if (operation === '-') {
+    return [expression, String(leftOperand - rightOperand)];
+  }
+  return [expression, String(parseInt(leftOperand, 10) + parseInt(rightOperand, 10))];
 };
 
 export default () => {
-    runGame(RULE, getExpressionAndAnswer);
+  runGame(RULE, getExpressionAndAnswer);
 };
-
-
-
-
-
