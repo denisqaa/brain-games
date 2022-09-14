@@ -1,14 +1,17 @@
 import readlineSync from "readline-sync";
 import getPlayerName from "./cli.js";
 
-const playGame = (rule, gameQuestion, getCorrectAnswer) => {
+const QUESTION_INDEX = 0;
+const ANSWER_INDEX = 1;
+
+const runGame = (rule, gameQuestionAndAnswerFunc) => {
     const name = getPlayerName();
     console.log(rule);
     for (let i = 0; i < 3; i++) {
-        let question = gameQuestion();
-        console.log(`Question: ${question}`);
+        let answerAndQuestion = gameQuestionAndAnswerFunc();
+        console.log(`Question: ${answerAndQuestion[QUESTION_INDEX]}`);
         const answer = readlineSync.question('Your answer: ');
-        let correctAnswer = getCorrectAnswer(question);
+        const correctAnswer = answerAndQuestion[ANSWER_INDEX];
         if (answer === correctAnswer) {
             console.log("Correct!");
         } else {
@@ -20,4 +23,4 @@ const playGame = (rule, gameQuestion, getCorrectAnswer) => {
     console.log(`Congratulations, ${name}`);
 }
 
-export default playGame;
+export default runGame;
