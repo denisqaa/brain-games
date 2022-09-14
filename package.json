@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/denisqaa/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/denisqaa/frontend-project-44/actions)",
   "main": "bin/brain-games.js",
   "bin": {
-    "code": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,10 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/denisqaa/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Denis Sharov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/denisqaa/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/denisqaa/frontend-project-44#readme"
+  "homepage": "https://github.com/denisqaa/frontend-project-44#readme",
+  "type": "module"
 }
