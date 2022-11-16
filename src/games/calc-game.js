@@ -5,7 +5,7 @@ const RULE = 'What is the result of the expression?';
 const AVAILABLE_OPERATORS = ['+', '-', '*'];
 
 const getExpressionAndAnswer = () => {
-  const expression = `${getRandomNumberFromRange()} ${AVAILABLE_OPERATORS[getRandomNumberFromRange(AVAILABLE_OPERATORS.length)]} ${getRandomNumberFromRange()}`;
+  const expression = `${getRandomNumberFromRange()} ${AVAILABLE_OPERATORS[getRandomNumberFromRange(AVAILABLE_OPERATORS.length - 1)]} ${getRandomNumberFromRange()}`;
   const splittedExpression = expression.trim().split(' ');
   const leftOperand = splittedExpression[0];
   const rightOperand = splittedExpression[2];
