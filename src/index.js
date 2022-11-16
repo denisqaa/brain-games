@@ -3,11 +3,12 @@ import getPlayerName from './cli.js';
 
 const QUESTION_INDEX = 0;
 const ANSWER_INDEX = 1;
+const CORRECT_ANSWERS_COUNT = 3;
 
 const runGame = (rule, gameQuestionAndAnswerFunc) => {
   const name = getPlayerName();
   console.log(rule);
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < CORRECT_ANSWERS_COUNT; i += 1) {
     const answerAndQuestion = gameQuestionAndAnswerFunc();
     console.log(`Question: ${answerAndQuestion[QUESTION_INDEX]}`);
     const answer = readlineSync.question('Your answer: ');
